@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!-- <div id="app"></div> -->
+    <button>REFRESH</button>
+    <div class="slidecontainer">
+      <span>GREEN</span>
+      <label for="greengreen">Green-Green</label>
+      <input type="range" name="greengreen" min="-100" max="100" value="32" class="slider" id="sliderGG">
+      <p>Value: <span id="ggo"></span></p>
+      <label for="greenred">Green-Red</label>
+      <input type="range" name="greenred" min="-100" max="100" value="17" class="slider" id="sliderGR">
+      <p>Value: <span id="gro"></span></p>
+      <label for="greenyellow">Green-Yellow</label>
+      <input type="range" name="greenyellow" min="-100" max="100" value="34" class="slider" id="sliderGY">
+      <p>Value: <span id="gyo"></span></p>
+      <span>RED</span>
+      <label for="redred">Red-Red</label>
+      <input type="range" name="redred" min="-100" max="100" value="1" class="slider" id="sliderRR">
+      <p>Value: <span id="rro"></span></p>
+      <label for="redgreen">Red-Green</label>
+      <input type="range" name="redgreen" min="-100" max="100" value="34" class="slider" id="sliderRG">
+      <p>Value: <span id="rgo"></span></p>
+      <label for="redyellow">Red-Yellow</label>
+      <input type="range" name="redyellow" min="-100" max="100" value="34" class="slider" id="sliderRY">
+      <p>Value: <span id="ryo"></span></p>
+      <span>YELLOW</span>
+      <label for="yellowyellow">Yellow-Yellow</label>
+      <input type="range" name="yellowyellow" min="-100" max="100" value="15" class="slider" id="sliderYY">
+      <p>Value: <span id="yyo"></span></p>
+      <label for="yellowgreen">Yellow-Green</label>
+      <input type="range" name="yellowgreen" min="-100" max="100" value="20" class="slider" id="sliderYG">
+      <p>Value: <span id="ygo"></span></p>
+      <label for="yellowred">Yellow-Red</label>
+      <input type="range" name="yellowred" min="-100" max="100" value="20" class="slider" id="sliderYR">
+      <p>Value: <span id="yro"></span></p>
+    </div>
+    <canvas id="life" width="500" height="500"></canvas>
+    <script type="module" src="/main4particles.js"></script>
+  </body>
+</html>

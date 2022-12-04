@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!-- REFERENCIA: https://www.youtube.com/watch?v=0Kx4Y9TVMGg&ab_channel=Brainxyz -->
+    <!-- <div id="app"></div> -->
+    <div class="slidecontainer">
+
+      <span class="titles">GREEN</span>
+
+      <div class="label-container">
+        <label for="greengreen">Green-Green</label>
+        <p>Value: <span id="ggo"></span></p>
+      </div>
+      <input type="range" name="greengreen" min="-100" max="100" value="32" class="slider" id="sliderGG">
+      
+      <div class="label-container">
+        <label for="greenred">Green-Red</label>
+        <p>Value: <span id="gro"></span></p>
+      </div>
+      <input type="range" name="greenred" min="-100" max="100" value="17" class="slider" id="sliderGR">
+
+      <div class="label-container">
+        <label for="greenyellow">Green-Yellow</label>
+        <p>Value: <span id="gyo"></span></p>
+      </div>
+      <input type="range" name="greenyellow" min="-100" max="100" value="34" class="slider" id="sliderGY">
+
+      <div class="label-container">
+        <label for="greenblue">Green-Blue</label>
+        <p>Value: <span id="gbo"></span></p>
+      </div>
+      <input type="range" name="greenblue" min="-100" max="100" value="34" class="slider" id="sliderGB">
+
+      <span class="titles">RED</span>
+
+      <div class="label-container">
+        <label for="redred">Red-Red</label>
+        <p>Value: <span id="rro"></span></p>
+      </div>
+      <input type="range" name="redred" min="-100" max="100" value="1" class="slider" id="sliderRR">
+
+      <div class="label-container">
+        <label for="redgreen">Red-Green</label>
+        <p>Value: <span id="rgo"></span></p>
+      </div>
+      <input type="range" name="redgreen" min="-100" max="100" value="34" class="slider" id="sliderRG">
+
+      <div class="label-container">
+        <label for="redyellow">Red-Yellow</label>
+        <p>Value: <span id="ryo"></span></p>
+      </div>
+      <input type="range" name="redyellow" min="-100" max="100" value="34" class="slider" id="sliderRY">
+
+      <div class="label-container">
+        <label for="redblue">Red-Blue</label>
+        <p>Value: <span id="rbo"></span></p>
+      </div>
+      <input type="range" name="redblue" min="-100" max="100" value="34" class="slider" id="sliderRB">
+
+      <span class="titles">YELLOW</span>
+
+      <div class="label-container">
+        <label for="yellowyellow">Yellow-Yellow</label>
+        <p>Value: <span id="yyo"></span></p>
+      </div>
+      <input type="range" name="yellowyellow" min="-100" max="100" value="15" class="slider" id="sliderYY">
+
+      <div class="label-container">
+        <label for="yellowgreen">Yellow-Green</label>
+        <p>Value: <span id="ygo"></span></p>
+      </div>
+      <input type="range" name="yellowgreen" min="-100" max="100" value="20" class="slider" id="sliderYG">
+
+      <div class="label-container">
+        <label for="yellowred">Yellow-Red</label>
+        <p>Value: <span id="yro"></span></p>
+      </div>
+      <input type="range" name="yellowred" min="-100" max="100" value="20" class="slider" id="sliderYR">
+
+      <div class="label-container">
+        <label for="yelloblue">Yellow-Blue</label>
+        <p>Value: <span id="ybo"></span></p>
+      </div>
+      <input type="range" name="yelloblue" min="-100" max="100" value="20" class="slider" id="sliderYB">
+
+      <span class="titles">BLUE</span>
+
+      <div class="label-container">
+        <label for="blueblue">Blue-Blue</label>
+        <p>Value: <span id="bbo"></span></p>
+      </div>
+      <input type="range" name="blueblue" min="-100" max="100" value="15" class="slider" id="sliderBB">
+
+      <div class="label-container">
+        <label for="blueyellow">Blue-Yellow</label>
+        <p>Value: <span id="byo"></span></p>
+      </div>
+      <input type="range" name="blueyellow" min="-100" max="100" value="15" class="slider" id="sliderBY">
+
+      <div class="label-container">
+        <label for="bluegreen">Blue-Green</label>
+        <p>Value: <span id="bgo"></span></p>
+      </div>
+      <input type="range" name="bluegreen" min="-100" max="100" value="20" class="slider" id="sliderBG">
+
+      <div class="label-container">
+        <label for="bluered">Blue-Red</label>
+        <p>Value: <span id="bro"></span></p>
+      </div>
+      <input type="range" name="bluered" min="-100" max="100" value="20" class="slider" id="sliderBR">
+
+      <sapn class="titles">SPEED</sapn>
+      <div class="label-container">
+        <label for="speed">speed</label>
+        <p>Value: <span id="speed-value"></span></p>
+      </div>
+      <input type="range" name="speed" min="10" max="100" value="50" class="slider" id="sliderSpeed">
+
+      <button class="refresh">REFRESH</button>
+    <button class="random">RANDOM</button>
+    </div>
+    <canvas id="life" width="1000" height="1000"></canvas>
+    <script type="module" src="/main4particles.js"></script>
+  </body>
+</html>
