@@ -87,7 +87,6 @@ let update = () => {
   for(let i = 0; i < atomsGroups.length; i++) {
     for(let j = 0; j < atomsGroups.length; j++) {
       let ppp = Math.random() * 2 - 1; 
-      console.log(ppp);
       rule( atomsGroups[i], atomsGroups[j], ramdomMatrix[i][j])
     }
   }
