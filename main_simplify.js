@@ -97,7 +97,7 @@ let update = () => {
   // draw(0, 0, ' hsl('+ $("#sliderBGC").val() +',100%,'+ $("#sliderBGL").val() +'%)', 1000)
   draw(0, 0, 'black', 1000)
   for(let i= 0; i < particles.length; i++) {
-    draw(particles[i].x, particles[i].y, particles[i].color, 5)
+    draw(particles[i].x, particles[i].y, particles[i].color, 3)
   }
   setTimeout(() => {
     requestAnimationFrame(update)
