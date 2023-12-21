@@ -1,17 +1,18 @@
 import './style.css'
 // REFERENCIA: https://www.youtube.com/watch?v=0Kx4Y9TVMGg&ab_channel=Brainxyz 
 let m = document.getElementById('life').getContext('2d');
-let draw = (x, y, c, s) => {
+let draw = (x, y, x2, y2,c, s) => {
   m.fillStyle = c;
   m.fillRect(x, y, s, s);
+  // m.fillRect(x2, y2, s-1, s-1);
 }
 
 
 let atomsGroups = [];
 let ramdomMatrix = [];
 let particles = []
-let particle = (x, y, c) => {
-  return {'x': x, 'y': y, 'vx': 0, 'vy': 0, 'color': c}
+let particle = (x, y, x2, y2, x3, y3, c) => {
+  return {'x': x, 'y': y, 'x2': x2, 'y2': y2, 'x3': x3, 'y3': y3, 'vx': 0, 'vy': 0, 'color': c}
 }
 
 
@@ -24,7 +25,7 @@ let random = () => {
 let create = (number, color) => {
   let group = []
   for(let i = 0; i < number; i++) {
-    group.push(particle(random(), random(), color))
+    group.push(particle(random(), random(), 0, 0, 0, 0, color))
     particles.push(group[i])
   }
   return group
@@ -53,8 +54,13 @@ let rule = (particles1, particles2, g) => {
     
     a.vx = (a.vx + fx) * 0.5
     a.vy = (a.vy + fy) * 0.5
+
+    a.x2 = a.x;
+    a.y2 = a.y;
+
     a.x += a.vx;
     a.y += a.vy;
+    
     if(a.x <= 200 || a.x >= 800) { a.vx *= -1}
     if(a.y <= 200 || a.y >= 800) { a.vy *= -1}
   }
@@ -94,9 +100,9 @@ let update = () => {
 
   m.clearRect(0, 0, 1000, 1000)
   // draw(0, 0, ' hsl('+ $("#sliderBGC").val() +',100%,'+ $("#sliderBGL").val() +'%)', 1000)
-  draw(0, 0, 'black', 1000)
+  draw(0, 0, 0, 0, 'black', 1000)
   for(let i= 0; i < particles.length; i++) {
-    draw(particles[i].x, particles[i].y, particles[i].color, 3)
+    draw(particles[i].x, particles[i].y, particles[i].x2, particles[i].y2, particles[i].color, 3)
   }
   setTimeout(() => {
     requestAnimationFrame(update)
