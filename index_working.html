@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="jquery_mobile/jquery.mobile-1.4.5.css">
+    <script src="jquery_mobile/jquery.js"></script>
+    <script src="jquery_mobile/jquery.mobile-1.4.5.js"></script>
+    <meta name="viewport" panel-="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <!-- REFERENCIA: https://www.youtube.com/watch?v=0Kx4Y9TVMGg&ab_channel=Brainxyz -->
+    <div data-role="page" id="page-1">
+      <div data-role="main" class="ui-panel-">
+        <canvas id="life" width="1000" height="1000"></canvas>
+
+        <div class="ui-grid-a">
+          <div class="ui-block-a">
+            <button class="ui-btn ui-shadow ui-corner-all refresh">REFRESH</button>
+          </div>
+          <div class="ui-block-b">
+            <button class="ui-btn ui-shadow ui-corner-all random">RANDOM</button>
+          </div>
+        </div>
+
+        <div class="ui-grid-d ui-responsive">
+          <div class="ui-block-a grid-block green-block">
+            <span class="titles title-green">GREEN</span>
+            <div class="panel-content p-green">
+              <label for="colorgreen">Color Particle 1</label>
+              <input type="range" name="colorgreen" min="0" max="360" value="118" data-highlight="true" class="slider" id="sliderCG">
+              <label for="greenparticles">Green-Particles</label>
+              <input type="range" name="greenparticles" min="20" max="700" value="400" data-highlight="true" class="slider" id="sliderGP">
+              <label for="greengreen">Green-Green</label>
+              <input type="range" name="greengreen" min="-100" max="100" value="32" data-highlight="true" class="slider" id="sliderGG">
+              <label for="greenred">Green-Red</label>
+              <input type="range" name="greenred" min="-100" max="100" value="17" data-highlight="true" class="slider" id="sliderGR">
+              <label for="greenyellow">Green-Yellow</label>
+              <input type="range" name="greenyellow" min="-100" max="100" value="34" data-highlight="true" class="slider" id="sliderGY">
+              <label for="greenblue">Green-Blue</label>
+              <input type="range" name="greenblue" min="-100" max="100" value="34" data-highlight="true" class="slider" id="sliderGB">
+            </div>
+          </div>
+          <div class="ui-block-b grid-block red-block">
+            <span class="titles title-red">RED</span>
+            <div class="panel-content p-red">
+              <label for="colorred">Color Particle 2</label>
+              <input type="range" name="colorred" min="0" max="360" value="0" data-highlight="true" class="slider" id="sliderCR">
+              <label for="redparticles">Red-Particles</label>
+              <input type="range" name="redparticles" min="20" max="700" value="400" data-highlight="true" class="slider" id="sliderRP">
+              <label for="redred">Red-Red</label>
+              <input type="range" name="redred" min="-100" max="100" value="1" data-highlight="true" class="slider" id="sliderRR">
+              <label for="redgreen">Red-Green</label>
+              <input type="range" name="redgreen" min="-100" max="100" value="34" data-highlight="true" class="slider" id="sliderRG">
+              <label for="redyellow">Red-Yellow</label>
+              <input type="range" name="redyellow" min="-100" max="100" value="34" data-highlight="true" class="slider" id="sliderRY">
+              <label for="redblue">Red-Blue</label>
+              <input type="range" name="redblue" min="-100" max="100" value="34" data-highlight="true" class="slider" id="sliderRB">
+            </div>
+          </div>
+          <div class="ui-block-c grid-block yellow-block">
+            <span class="titles title-yellow">YELLOW</span>
+            <div class="panel-content p-yellow">
+              <label for="coloryellow">Color Particle 3</label>
+              <input type="range" name="coloryellow" min="0" max="360" value="58" data-highlight="true" class="slider" id="sliderCY">
+              <label for="yellowparticles">Yellow-Particles</label>
+              <input type="range" name="yellowparticles" min="20" max="700" value="400" data-highlight="true" class="slider" id="sliderYP">
+              <label for="yellowyellow">Yellow-Yellow</label>
+              <input type="range" name="yellowyellow" min="-100" max="100" value="15" data-highlight="true" class="slider" id="sliderYY">
+              <label for="yellowgreen">Yellow-Green</label>
+              <input type="range" name="yellowgreen" min="-100" max="100" value="20" data-highlight="true" class="slider" id="sliderYG">
+              <label for="yellowred">Yellow-Red</label>
+              <input type="range" name="yellowred" min="-100" max="100" value="20" data-highlight="true" class="slider" id="sliderYR">
+              <label for="yelloblue">Yellow-Blue</label>
+              <input type="range" name="yelloblue" min="-100" max="100" value="20" data-highlight="true" class="slider" id="sliderYB">
+            </div>
+          </div>
+          <div class="ui-block-d grid-block blue-block">
+            <span class="titles title-blue">BLUE</span>
+            <div class="panel-content p-blue">
+              <label for="colorblue">Color Particle 4</label>
+              <input type="range" name="colorblue" min="0" max="360" value="217" data-highlight="true" class="slider" id="sliderCB">
+              <label for="blueparticles">Blue-Particles</label>
+              <input type="range" name="blueparticles" min="20" max="700" value="214" data-highlight="true" class="slider" id="sliderBP">
+              <label for="blueblue">Blue-Blue</label>
+              <input type="range" name="blueblue" min="-100" max="100" value="15" data-highlight="true" class="slider" id="sliderBB">
+              <label for="bluegreen">Blue-Green</label>
+              <input type="range" name="bluegreen" min="-100" max="100" value="20" data-highlight="true" class="slider" id="sliderBG">
+              <label for="bluered">Blue-Red</label>
+              <input type="range" name="bluered" min="-100" max="100" value="20" data-highlight="true" class="slider" id="sliderBR">
+              <label for="blueyellow">Blue-Yellow</label>
+              <input type="range" name="blueyellow" min="-100" max="100" value="15" data-highlight="true" class="slider" id="sliderBY">
+            </div>
+          </div>
+          <div class="ui-block-e grid-block gray-block">
+            <span class="titles title-gray">PANEL</span>
+            <div class="panel-content p-gray">
+            <!-- <label for="background">Background color</label>
+            <input type="range" name="background" min="0" max="360" value="0" data-highlight="true" class="slider" id="sliderBGC">
+            <label for="background">Background lightness</label>
+            <input type="range" name="background" min="0" max="100" value="0" data-highlight="true" class="slider" id="sliderBGL"> -->
+            <label for="speed">Speed</label>
+            <input type="range" name="speed" min="10" max="100" value="50" data-highlight="true" class="slider" id="sliderSpeed">
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <label>
+                  <input type="checkbox" name="checkbox-0" id="random-colors" checked>All colors </label>
+              </div>
+              <div class="ui-block-b">
+                <label>
+                  <input type="checkbox" name="checkbox-0" id="number-particles" checked>All particles </label>
+              </div>
+            </div>
+
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <label>
+                  <!-- <input type="checkbox" name="checkbox-0" id="all-colors" checked>All colors </label> -->
+                  <label>
+                    <input type="checkbox" name="checkbox-0" id="all-green">All green </label>
+              </div>
+              <div class="ui-block-b">
+                <label>
+                  <input type="checkbox" name="checkbox-0" id="all-red">All red </label>
+              </div>
+            </div>
+
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                <label>
+                  <input type="checkbox" name="checkbox-0" id="all-yellow">All yellow </label>
+              </div>
+              <div class="ui-block-b">
+                <label>
+                  <input type="checkbox" name="checkbox-0" id="all-blue">All blue </label>
+              </div>
+            </div>
+
+            <div class="ui-grid-a">
+              <div class="ui-block-a">
+                
+              </div>
+              <div class="ui-block-b">
+
+              </div>
+            </div>
+
+         
+
+            
+            
+            <a href="#popup-save" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop" id="save-open">SAVE</a>
+            <div data-role="popup" id="popup-save" data-theme="a" class="ui-corner-all">
+              <form data-ajax="false">
+                <div style="padding:10px 20px;">
+                  <h3>Name your pattern</h3>
+                  <!-- <label for="un" class="ui-hidden-accessible">Name:</label>
+                  <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a"> -->
+                  <select name="select-custom-1" id="select-custom-1" data-native-menu="false">
+                      <option value="slot_1">Slot 1</option>
+                      <option value="slot_2">Slot 2</option>
+                      <option value="slot_3">Slot 3</option>
+                      <option value="slot_4">Slot 4</option>
+                  </select>
+                  <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check save">SAVE</button>
+                </div>
+              </form>
+            </div>
+
+            <a href="#popup-load" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop" id="load-open">LOAD</a>
+            <div data-role="popup" id="popup-load" data-theme="a" class="ui-corner-all">
+              <form data-ajax="false">
+                <div style="padding:10px 20px;">
+                  <h3>Load pattern</h3>
+                  <!-- <label for="un" class="ui-hidden-accessible">Name:</label>
+                  <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a"> -->
+                  <select name="select-custom-2" id="select-custom-2" data-native-menu="false">
+                    <optgroup label="Memory">
+                        <option value="basic_1">Basic 1</option>
+                        <option value="basic_2">Basic 2</option>
+                        <option value="basic_3">Basic 3</option>
+                        <option value="basic_4">Basic 4</option>
+                      </optgroup>
+                      <optgroup label="User">
+                        <option value="slot_1">Slot 1</option>
+                        <option value="slot_2">Slot 2</option>
+                        <option value="slot_3">Slot 3</option>
+                        <option value="slot_4">Slot 4</option>
+                      </optgroup>
+                    </select>
+                  <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check load">LOAD</button>
+                </div>
+              </form>
+            </div>
+          </div>
+            <!-- <button class="load">LOAD</button> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main4particles_jqm.js"></script>
+  </body>
+</html>

@@ -19,8 +19,10 @@ canvas {
   /* border: 10px solid rgb(83, 83, 83); */
   /* margin: 40px auto; */
   display: inherit;
-  width: 100%;
-  height: 50vh;
+  width: 90vw;
+  height: 90vh;
+  padding-top: 5vh;
+  padding-left: 5vw;
 }
 
 .label-container{
