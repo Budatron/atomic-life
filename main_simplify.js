@@ -7,6 +7,11 @@ let draw = (x, y, x2, y2,c, s) => {
   // m.fillRect(x2, y2, s-1, s-1);
 }
 
+let dMin = 20;
+let gMin = 0.3;
+
+dMin = Math.floor(Math.random() * (51 - 20 + 1)) + 20;
+gMin = 0.1 + Math.random() * 0.5;
 
 let atomsGroups = [];
 let ramdomMatrix = [];
@@ -45,8 +50,15 @@ let rule = (particles1, particles2, g) => {
 
       let d = Math.sqrt(dx * dx + dy * dy);
       
-      if(d > 0 && d < 80) {
+
+      // Distancia minima y maxima de la accion de la fuerza
+      if(d > dMin && d < 80) {
         let F = g * 1/d;
+        fx += (F * dx)
+        fy += (F * dy)
+        // Fuerza constante a cierta distancia
+      } else if(d > 0 && d < dMin){
+        let F = gMin * 1/d;
         fx += (F * dx)
         fy += (F * dy)
       }
@@ -57,12 +69,13 @@ let rule = (particles1, particles2, g) => {
 
     a.x2 = a.x;
     a.y2 = a.y;
+    
+    if(a.x <= -100 || a.x >= 1100) { a.vx *= -1}
+    if(a.y <= -100 || a.y >= 1100) { a.vy *= -1}
 
     a.x += a.vx;
     a.y += a.vy;
-    
-    if(a.x <= 200 || a.x >= 800) { a.vx *= -1}
-    if(a.y <= 200 || a.y >= 800) { a.vy *= -1}
+
   }
 }
 
@@ -85,6 +98,7 @@ function createRamdomMatrix() {
       ramdomMatrix[i][j] = (Math.random() * 2 - 1); 
     }
   }
+  console.log(ramdomMatrix);
 }
 
 
